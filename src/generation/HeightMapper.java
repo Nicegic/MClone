@@ -36,12 +36,15 @@ public class HeightMapper {
         // Definiere 3 Blockmaterialien
         Material red = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
         red.setColor("Color", ColorRGBA.Red);
+        red.setTexture("ColorMap", assetManager.loadTexture("Textures/Terrain/BrickWall/BrickWall.jpg"));
 
         Material blue = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
         blue.setColor("Color", ColorRGBA.Blue);
+        blue.setTexture("ColorMap", assetManager.loadTexture("Textures/Terrain/BrickWall/BrickWall.jpg"));
 
         Material yellow = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
         yellow.setColor("Color", ColorRGBA.Yellow);
+        yellow.setTexture("ColorMap", assetManager.loadTexture("Textures/Terrain/BrickWall/BrickWall.jpg"));
 
         // Zur Besseren Testansicht: Startpunkt unter 0
         int start = -50;
@@ -78,4 +81,4 @@ public class HeightMapper {
 
         rootNode.attachChild(pivot);              // make the cube appear in the scene
     }
-}
+} 
