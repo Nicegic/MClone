@@ -2,6 +2,8 @@
  * OpenSimplex Noise sample class.
  */
 
+package junit.generation;
+
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.*;

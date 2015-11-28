@@ -13,6 +13,8 @@
  *   of any particular randomization library, so results
  *   will be the same when ported to other languages.
  */
+
+package junit.generation;
  
 public class OpenSimplexNoise {
 
