@@ -1,14 +1,9 @@
 package mygame;
 
 import com.jme3.app.SimpleApplication;
-import com.jme3.material.Material;
-import com.jme3.math.ColorRGBA;
-import com.jme3.math.Vector3f;
 import com.jme3.renderer.RenderManager;
 import com.jme3.scene.Geometry;
-import com.jme3.scene.Node;
-import com.jme3.scene.shape.Box;
-import generation.OpenSimplexNoise;
+import generation.HeightMapper;
 
 /**
  * test
@@ -23,7 +18,18 @@ public class Main extends SimpleApplication {
 
     @Override
     public void simpleInitApp() {
-        Box b = new Box(1, 1, 1); // create cube shape
+        HeightMapper hm = new HeightMapper(assetManager, rootNode);
+        int width = 4;
+        int length = 4;
+        Geometry[][][] geom = new Geometry[width*16][length*16][16];
+        
+        for(int x = 0; x < width; x++) {
+            for(int y = 0; y < length; y++) {
+                hm.generateChunk(x, y, 16, 16, 16, geom);
+            }
+        }
+        
+        /*Box b = new Box(1, 1, 1); // create cube shape
         OpenSimplexNoise osn = new OpenSimplexNoise();
         
         
@@ -73,8 +79,7 @@ public class Main extends SimpleApplication {
           }
         
        
-        rootNode.attachChild(pivot);              // make the cube appear in the scene
-
+        rootNode.attachChild(pivot);              // make the cube appear in the scene*/
     }
 
     @Override
