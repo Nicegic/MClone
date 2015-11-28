@@ -4,6 +4,7 @@
 
 package junit.generation;
 
+import generation.OpenSimplexNoise;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.*;

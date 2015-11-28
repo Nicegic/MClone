@@ -14,7 +14,7 @@
  *   will be the same when ported to other languages.
  */
 
-package junit.generation;
+package generation;
  
 public class OpenSimplexNoise {
 
