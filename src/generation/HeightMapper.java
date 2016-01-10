@@ -54,7 +54,7 @@ public class HeightMapper {
         // Unschön gemacht, nur zum Testen wie man die Objekte handhabt so gemacht
         int xOffSet = cW * xCoord;
         int yOffSet = cL * yCoord;
-        
+
         for (int x = 0; x < cW; x++) {
             for (int y = 0; y < cL; y++) {
                 int xPos = x + xOffSet;
@@ -81,4 +81,4 @@ public class HeightMapper {
 
         rootNode.attachChild(pivot);              // make the cube appear in the scene
     }
-} 
+}

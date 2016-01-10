@@ -1,0 +1,52 @@
+<scene formatVersion="1.0.1" export_time="1448124568.375803" exported_by="Nicolas" previous_export_time="0" >
+  <nodes >
+    <node name="Cube" >
+      <position y="0.000000" z="-0.000000" x="0.000000" />
+      <rotation qx="0.000000" qw="1.000000" qy="0.000000" qz="-0.000000" />
+      <scale y="1.000000" z="1.000000" x="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity lock_trans_y="False" inertia_tensor="0.4000000059604645" actor="False" lock_trans_z="False" lock_rot_x="False" ghost="False" friction_y="1.0" anisotropic_friction="False" name="Cube" lock_rot_y="False" damping_rot="0.1589999943971634" physics_type="STATIC" velocity_min="0.0" friction_z="1.0" lock_trans_x="False" damping_trans="0.02539999969303608" velocity_max="0.0" meshFile="Cube.mesh" mass_radius="1.0" lock_rot_z="False" friction_x="1.0" mass="1.0" />
+    </node>
+    <node name="Lamp" >
+      <position y="5.903862" z="-1.005454" x="4.076245" />
+      <rotation qx="0.169076" qw="0.570947" qy="0.755880" qz="-0.272171" />
+      <scale y="1.000000" z="1.000000" x="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <light type="point" powerScale="1.0" shadow="true" name="Lamp" >
+        <position y="5.903862" z="-1.005454" x="4.076245" />
+        <lightAttenuation linear="0.03333335240683057" constant="1.0" quadratic="0.0" range="5000" />
+        <colourDiffuse r="1.0" b="1.0" g="1.0" />
+        <colourSpecular r="1.0" b="1.0" g="1.0" />
+        <colourShadow r="1.0" b="1.0" g="1.0" />
+      </light>
+    </node>
+    <node name="Camera" >
+      <position y="5.343665" z="6.507640" x="7.481132" />
+      <rotation qx="0.481707" qw="0.781600" qy="0.334251" qz="-0.212922" />
+      <scale y="1.000000" z="1.000000" x="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <camera projectionType="perspective" fov="0.5033799435163735" name="Camera" >
+        <clipping nearPlaneDist="0.10000000149011612" farPlaneDist="100.0" near="0.10000000149011612" far="100.0" />
+      </camera>
+    </node>
+  </nodes>
+  <externals >
+    <item type="material" >
+      <file name="D:\Programme\JMonkeyEngine\Projects\MClone\assets\Models\Material.material" />
+    </item>
+  </externals>
+  <environment >
+    <colourBackground r="0.05087608844041824" b="0.05087608844041824" g="0.05087608844041824" />
+    <colourDiffuse r="0.05087608844041824" b="0.05087608844041824" g="0.05087608844041824" />
+    <colourAmbient r="0.0" b="0.0" g="0.0" />
+  </environment>
+</scene>
