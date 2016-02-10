@@ -2,8 +2,7 @@ package mygame;
 
 import com.jme3.app.SimpleApplication;
 import com.jme3.renderer.RenderManager;
-import com.jme3.scene.Geometry;
-import generation.HeightMapper;
+import generation.Generator;
 
 /**
  * test
@@ -18,18 +17,22 @@ public class Main extends SimpleApplication {
 
     @Override
     public void simpleInitApp() {
-        HeightMapper hm = new HeightMapper(assetManager, rootNode);
-        int width = 4;
-        int length = 4;
-        Geometry[][][] geom = new Geometry[width*16][length*16][16];
+       Generator gen = new Generator(assetManager, rootNode);
+       gen.start();
+       try{Thread.sleep(5000);}catch(InterruptedException inte){}
+       gen.renderIt();
+       /*HeightMapper hm = new HeightMapper(assetManager, rootNode);
+       int width = 4;
+       int length = 4;
+       Geometry[][][] geom = new Geometry[width*16][length*16][16];
         
-        for(int x = 0; x < width; x++) {
-            for(int y = 0; y < length; y++) {
-                hm.generateChunk(x, y, 16, 16, 16, geom);
-            }
-        }
+       for(int x = 0; x < width; x++) {
+           for(int y = 0; y < length; y++) {
+               hm.generateChunk(x, y, 16, 16, 16, geom);
+           }
+       }
         
-        /*Box b = new Box(1, 1, 1); // create cube shape
+        Box b = new Box(1, 1, 1); // create cube shape
         OpenSimplexNoise osn = new OpenSimplexNoise();
         
         
@@ -52,7 +55,6 @@ public class Main extends SimpleApplication {
         z=16;
         
         // Unschön gemacht, nur zum Testen wie man die Objekte handhabt so gemacht
-        Geometry geom[][][] = new Geometry[x][y][z];
         
         for (int i = 0; i < x; i++){
             for (int j = 0; j < y; j++){

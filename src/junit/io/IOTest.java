@@ -5,7 +5,7 @@
 package junit.io;
 
 import java.io.File;
-import com.almworks.sqlite4java.*;
+//import com.almworks.sqlite4java.*;
 
 /**
  *

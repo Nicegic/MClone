@@ -4,10 +4,12 @@ import base.blox.*;
 import base.Chunk;
 import base.IDGenerator;
 import base.Position;
+import java.util.Random;
 
 public class ChunkGenerator {						//Terrain- (und Block-)Generierung
 
-    static OpenSimplexNoise osn = new OpenSimplexNoise();
+    static final Random seeder = new Random(System.nanoTime());
+    static OpenSimplexNoise osn = new OpenSimplexNoise(seeder.nextLong());
     static int height, cx, cy;
 
     public static void generate(Chunk c, String s) { // Generierung abhängig vom Biom
@@ -40,7 +42,7 @@ public class ChunkGenerator {						//Terrain- (und Block-)Generierung
     }
 
     private static int generateHeight(int x, int y, int cx, int cy) { // Auslagerung des langen Befehls
-        return (int) (osn.eval((x + cx) / 16, (y + cy) / 16));
+        return (int) (osn.eval((x + cx) / 16, (y + cy) / 16)*5+120);
     }
 
     private static void generateGrassland(Chunk c) {		//Grassland-Biom
@@ -62,7 +64,6 @@ public class ChunkGenerator {						//Terrain- (und Block-)Generierung
                 }
             }//ja, jeder Block kann ne NullPointer werfen, wenn die ID nicht registriert ist. Ist der einfachste Weg, fehlende IDs abzufangen!
         }
-        try{c.blocks[8][8][120] = new Furnace(new Position(8+cx,8+cy,120), Facing.NORTH, getId("Furnace"),c);}catch(NullPointerException npe){System.out.println(npe.getMessage());System.exit(0);}
     }
 
     private static void generateBeach(Chunk c) { // Strand-Biom
@@ -106,7 +107,6 @@ public class ChunkGenerator {						//Terrain- (und Block-)Generierung
                 }
             }
         }
-        c.blocks[8][8][120]=new Furnace(new Position(8+cx,8+cy,120),Facing.NORTH,getId("Furnace"),c);
     }
 
     private static Block normalGeneration(int x, int y, int z, int cx, int cy, Chunk c) { // Aufgrund noch nicht überlegter Generierungsroutine einfach Steingenerierung
